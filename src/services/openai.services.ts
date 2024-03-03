@@ -44,7 +44,7 @@ const runAssistant = async (threadId: string, assistantId: string) => {
   try {
     const run = await openai.beta.threads.runs.create(threadId, {
       assistant_id: assistantId,
-      instructions: "Only answer questions related to law. when you are ask a question different to rwandan law say that you are law assistant at you can not assist with anthing else. always when you provided answer return article and law where you got the answer(article please. not page).",
+      instructions: "Only answer questions related to law. when you are ask a question different to rwandan law say that you are law assistant at you can not assist with anthing else. always when you provided answer return article and law where you got the answer(article please. not page). only provide answers from provided pdf",
     });
     console.log(run);
     return run;
